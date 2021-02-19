@@ -6,17 +6,15 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import team404.restaurant.model.dto.AccountDto;
-import team404.restaurant.model.dto.TokenDto;
-import team404.restaurant.service.SignInService;
+import team404.restaurant.service.SignUpService;
 
 @RestController
-public class SignInController {
+public class SignUpController {
     @Autowired
-    private SignInService signInService;
+    private SignUpService signUpService;
 
-    @PostMapping("/signIn")
-    public ResponseEntity<TokenDto> signIn(@RequestBody AccountDto accountDto) {
-        return ResponseEntity.ok(signInService.signIn(accountDto));
+    @PostMapping("/signUp")
+    public void signUp(@RequestBody AccountDto accountDto) {
+        signUpService.signUp(accountDto);
     }
-
 }

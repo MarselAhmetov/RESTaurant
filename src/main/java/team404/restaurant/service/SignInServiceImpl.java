@@ -8,9 +8,9 @@ import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import team404.restaurant.model.Account;
-import team404.restaurant.model.dto.SignInDto;
+import team404.restaurant.model.dto.AccountDto;
 import team404.restaurant.model.dto.TokenDto;
-import team404.restaurant.repository.UserRepository;
+import team404.restaurant.repository.AccountRepository;
 
 import java.util.Optional;
 
@@ -18,7 +18,7 @@ import java.util.Optional;
 public class SignInServiceImpl implements SignInService {
 
     @Autowired
-    private UserRepository userRepository;
+    private AccountRepository accountRepository;
 
     @Autowired
     private PasswordEncoder passwordEncoder;
@@ -27,12 +27,12 @@ public class SignInServiceImpl implements SignInService {
     private String secret;
 
     @Override
-    public TokenDto signIn(SignInDto signInData) {
-        Optional<Account> userOptional = userRepository.findUserByLogin(signInData.getLogin());
+    public TokenDto signIn(AccountDto accountDto) {
+        Optional<Account> userOptional = accountRepository.findAccountByLogin(accountDto.getLogin());
 
         if (userOptional.isPresent()) {
             Account account = userOptional.get();
-            if (passwordEncoder.matches(signInData.getPassword(), account.getPassword())) {
+            if (passwordEncoder.matches(accountDto.getPassword(), account.getPassword())) {
                 String token = Jwts.builder()
                         .setSubject(account.getId().toString())
                         .claim("login", account.getLogin())

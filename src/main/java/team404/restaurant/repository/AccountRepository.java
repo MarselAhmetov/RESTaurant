@@ -7,6 +7,6 @@ import team404.restaurant.model.Account;
 import java.util.Optional;
 
 @Repository
-public interface UserRepository extends JpaRepository<Account, Long> {
-    Optional<Account> findUserByLogin(String login);
+public interface AccountRepository extends JpaRepository<Account, Long> {
+    Optional<Account> findAccountByLogin(String login);
 }
