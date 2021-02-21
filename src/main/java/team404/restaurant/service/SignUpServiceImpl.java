@@ -1,5 +1,6 @@
 package team404.restaurant.service;
 
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -9,12 +10,11 @@ import team404.restaurant.model.dto.AccountDto;
 import team404.restaurant.repository.AccountRepository;
 
 @Service
+@AllArgsConstructor
 public class SignUpServiceImpl implements SignUpService{
-    @Autowired
-    PasswordEncoder passwordEncoder;
 
-    @Autowired
-    AccountRepository accountRepository;
+    private final PasswordEncoder passwordEncoder;
+    private final AccountRepository accountRepository;
 
     @Override
     public void signUp(AccountDto accountDto) {
