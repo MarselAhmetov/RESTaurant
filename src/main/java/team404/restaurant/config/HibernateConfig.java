@@ -25,20 +25,14 @@ public class HibernateConfig {
 
     @Bean(name = "sessionFactory")
     @DependsOn("liquibase")
-    public LocalSessionFactoryBean createLocalSessionFactoryBean(
-            DataSource dataSource
-    ) {
+    public LocalSessionFactoryBean createLocalSessionFactoryBean(DataSource dataSource) {
         LocalSessionFactoryBean sessionFactoryBean = new LocalSessionFactoryBean();
         sessionFactoryBean.setConfigLocation(new ClassPathResource("hibernate.cfg.xml"));
         sessionFactoryBean.setDataSource(dataSource);
-        //sessionFactoryBean.setJtaTransactionManager(transactionManager);
 
-        //todo:
         sessionFactoryBean.getHibernateProperties().put(
                 "hibernate.dialect",
-                hibernateDialect
-                //"org.hibernate.dialect.PostgreSQL10Dialect"
-        );
+                hibernateDialect);
 
         return sessionFactoryBean;
     }
@@ -57,6 +51,4 @@ public class HibernateConfig {
         hibernateTemplate.setSessionFactory(sessionFactory);
         return hibernateTemplate;
     }
-
-
 }
