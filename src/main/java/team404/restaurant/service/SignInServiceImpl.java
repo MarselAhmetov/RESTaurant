@@ -2,40 +2,40 @@ package team404.restaurant.service;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import team404.restaurant.model.Account;
-import team404.restaurant.model.dto.AccountDto;
-import team404.restaurant.model.dto.TokenDto;
+import team404.restaurant.domain.Account;
+import team404.restaurant.dto.SignInDto;
+import team404.restaurant.dto.TokenDto;
 import team404.restaurant.repository.AccountRepository;
+import team404.restaurant.repository.SimpleDao;
 
 import java.util.Optional;
 
 @Service
+@RequiredArgsConstructor
 public class SignInServiceImpl implements SignInService {
 
-    @Autowired
-    private AccountRepository accountRepository;
+    private final AccountRepository accountRepository;
+    private final PasswordEncoder passwordEncoder;
 
-    @Autowired
-    private PasswordEncoder passwordEncoder;
 
     @Value("${jwt.secret}")
     private String secret;
 
     @Override
-    public TokenDto signIn(AccountDto accountDto) {
-        Optional<Account> userOptional = accountRepository.findAccountByLogin(accountDto.getLogin());
+    public TokenDto signIn(SignInDto signInDto) {
+        Optional<Account> userOptional = accountRepository.findAccountByEmail(signInDto.getEmail());
 
         if (userOptional.isPresent()) {
             Account account = userOptional.get();
-            if (passwordEncoder.matches(accountDto.getPassword(), account.getPassword())) {
+            if (passwordEncoder.matches(signInDto.getPassword(), account.getPassword())) {
                 String token = Jwts.builder()
                         .setSubject(account.getId().toString())
-                        .claim("login", account.getLogin())
+                        .claim("login", account.getEmail())
                         .claim("role", account.getRole().name())
                         .signWith(SignatureAlgorithm.HS256, secret)
                         .compact();

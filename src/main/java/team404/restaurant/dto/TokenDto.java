@@ -1,6 +1,5 @@
-package team404.restaurant.model.dto;
+package team404.restaurant.dto;
 
-import io.swagger.annotations.ApiModel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 

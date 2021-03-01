@@ -1,4 +1,4 @@
-package team404.restaurant.model;
+package team404.restaurant.domain;
 
 import org.springframework.security.core.GrantedAuthority;
 

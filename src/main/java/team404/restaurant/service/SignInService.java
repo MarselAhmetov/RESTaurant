@@ -1,8 +1,8 @@
 package team404.restaurant.service;
 
-import team404.restaurant.model.dto.AccountDto;
-import team404.restaurant.model.dto.TokenDto;
+import team404.restaurant.dto.SignInDto;
+import team404.restaurant.dto.TokenDto;
 
 public interface SignInService {
-    TokenDto signIn(AccountDto accountDto);
+    TokenDto signIn(SignInDto signInDto);
 }
