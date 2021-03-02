@@ -22,14 +22,4 @@ public abstract class LongIdEntity implements Identified{
     public void setId(Long id) {
         this.id = id;
     }
-
-    @Override
-    public int hashCode() {
-        return id != null ? id.hashCode() : System.identityHashCode(this);
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        return (obj instanceof LongIdEntity) && (id != null) && (id.equals(((LongIdEntity) obj).getId()));
-    }
 }

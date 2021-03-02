@@ -22,14 +22,4 @@ public abstract class UuidIdEntity implements Identified {
     public void setId(UUID id) {
         this.id = id;
     }
-
-    @Override
-    public int hashCode() {
-        return id != null ? id.hashCode() : System.identityHashCode(this);
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        return (obj instanceof UuidIdEntity) && (id != null) && (id.equals(((UuidIdEntity) obj).getId()));
-    }
 }

@@ -1,6 +1,6 @@
 package team404.restaurant.service;
 
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import team404.restaurant.domain.Account;
@@ -9,7 +9,7 @@ import team404.restaurant.dto.AccountDto;
 import team404.restaurant.repository.AccountRepository;
 
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class SignUpServiceImpl implements SignUpService{
 
     private final PasswordEncoder passwordEncoder;
