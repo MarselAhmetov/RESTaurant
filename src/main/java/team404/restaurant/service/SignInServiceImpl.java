@@ -11,7 +11,6 @@ import team404.restaurant.domain.Account;
 import team404.restaurant.dto.SignInDto;
 import team404.restaurant.dto.TokenDto;
 import team404.restaurant.repository.AccountRepository;
-import team404.restaurant.repository.SimpleDao;
 
 import java.util.Optional;
 
@@ -35,8 +34,6 @@ public class SignInServiceImpl implements SignInService {
             if (passwordEncoder.matches(signInDto.getPassword(), account.getPassword())) {
                 String token = Jwts.builder()
                         .setSubject(account.getId().toString())
-                        .claim("login", account.getEmail())
-                        .claim("role", account.getRole().name())
                         .signWith(SignatureAlgorithm.HS256, secret)
                         .compact();
                 return new TokenDto(token);

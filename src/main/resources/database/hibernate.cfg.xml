@@ -6,6 +6,11 @@
 
     <session-factory>
         <mapping class="team404.restaurant.domain.Account"/>
+        <mapping class="team404.restaurant.domain.Restaurant"/>
+        <mapping class="team404.restaurant.domain.Client"/>
+        <mapping class="team404.restaurant.domain.Employee"/>
+        <mapping class="team404.restaurant.domain.Menu"/>
+        <mapping class="team404.restaurant.domain.Restaurateur"/>
     </session-factory>
 
 </hibernate-configuration>
