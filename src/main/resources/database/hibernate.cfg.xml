@@ -5,12 +5,12 @@
 <hibernate-configuration>
 
     <session-factory>
-        <mapping class="team404.restaurant.domain.Account"/>
-        <mapping class="team404.restaurant.domain.Restaurant"/>
-        <mapping class="team404.restaurant.domain.Client"/>
-        <mapping class="team404.restaurant.domain.Employee"/>
-        <mapping class="team404.restaurant.domain.Menu"/>
-        <mapping class="team404.restaurant.domain.Restaurateur"/>
+        <mapping class="team404.restaurant.account.model.Account"/>
+        <mapping class="team404.restaurant.restaurant.model.Restaurant"/>
+        <mapping class="team404.restaurant.client.model.Client"/>
+        <mapping class="team404.restaurant.employee.model.Employee"/>
+        <mapping class="team404.restaurant.general.model.Menu"/>
+        <mapping class="team404.restaurant.restaurateur.model.Restaurateur"/>
     </session-factory>
 
 </hibernate-configuration>
