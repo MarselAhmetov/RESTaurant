@@ -47,7 +47,6 @@ public class SignUpServiceImpl implements SignUpService{
                 restaurateur.setAccount(account);
                 simpleDao.save(restaurateur);
                 break;
-
         }
     }
 }

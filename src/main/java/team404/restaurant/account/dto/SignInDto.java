@@ -7,8 +7,8 @@ import lombok.Setter;
 @Getter
 @Setter
 public class SignInDto {
-    @ApiModelProperty(name = "Email", required = true, notes = "User email")
+    @ApiModelProperty(name = "Email", required = true)
     private String email;
-    @ApiModelProperty(name = "Password", required = true, notes = "User password")
+    @ApiModelProperty(name = "Password", required = true)
     private String password;
 }

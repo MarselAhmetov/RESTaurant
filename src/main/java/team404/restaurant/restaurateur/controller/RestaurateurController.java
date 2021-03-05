@@ -24,7 +24,7 @@ public class RestaurateurController {
 
     @ApiOperation("Get information about current restaurateur")
     @GetMapping("/api/restaurateur")
-    @PreAuthorize("isAuthenticated()")
+    @PreAuthorize("hasAuthority('RESTAURATEUR')")
     @ResponseBody
     public RestaurateurDto getCurrentRestaurateur() {
         return restaurateurService.getCurrentRestaurateur();

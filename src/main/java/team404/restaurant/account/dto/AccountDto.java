@@ -7,6 +7,6 @@ import lombok.Setter;
 @Getter
 @Setter
 public class AccountDto extends AccountSafeDto {
-    @ApiModelProperty(name = "Password", required = true, notes = "Password")
+    @ApiModelProperty(name = "Password", required = true)
     private String password;
 }

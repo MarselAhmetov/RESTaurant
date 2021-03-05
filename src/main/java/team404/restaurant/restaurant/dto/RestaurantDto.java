@@ -8,8 +8,8 @@ import team404.restaurant.general.dto.UuidIdDto;
 @Getter
 @Setter
 public class RestaurantDto extends UuidIdDto {
-    @ApiModelProperty(name = "Name", required = true, notes = "Name of restaurant")
+    @ApiModelProperty(name = "Name", required = true)
     private String name;
-    @ApiModelProperty(name = "Location", required = true, notes = "Location")
+    @ApiModelProperty(name = "Location", required = true)
     private String location;
 }
