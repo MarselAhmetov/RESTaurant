@@ -1,10 +1,7 @@
 <databaseChangeLog
         xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
-        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext
-   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
-   http://www.liquibase.org/xml/ns/dbchangelog
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
 
     <changeSet id="28.02.1700" author="vladislav">
@@ -21,4 +18,81 @@
             <column name="ROLE" type="varchar(32)"/>
         </createTable>
     </changeSet>
+
+    <changeSet id="04.03.1218" author="anastasiia">
+        <createTable tableName="client">
+            <column name="CLIENT_ID" type="uuid">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="ACCOUNT_ID" type="bigint">
+                <constraints references="ACCOUNT(ACCOUNT_ID)"
+                             foreignKeyName="Client_Account_Id"
+                             nullable="false"/>
+            </column>
+            <column name="FIRST_NAME" type="varchar(64)"/>
+            <column name="LAST_NAME" type="varchar(64)"/>
+            <column name="PHONE_NUMBER" type="varchar(20)"/>
+        </createTable>
+
+        <createTable tableName="employee">
+            <column name="EMPLOYEE_ID" type="uuid">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="ACCOUNT_ID" type="bigint">
+                <constraints references="ACCOUNT(ACCOUNT_ID)"
+                             foreignKeyName="Client_Account_Id"
+                             nullable="false"/>
+            </column>
+            <column name="FIRST_NAME" type="varchar(64)"/>
+            <column name="LAST_NAME" type="varchar(64)"/>
+            <column name="FATHER_NAME" type="varchar(64)"/>
+            <column name="PHONE_NUMBER" type="varchar(20)"/>
+            <column name="ROLE" type="varchar(32)"/>
+        </createTable>
+
+        <createTable tableName="restaurateur">
+            <column name="RESTAURATEUR_ID" type="uuid">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="ACCOUNT_ID" type="bigint">
+                <constraints references="ACCOUNT(ACCOUNT_ID)"
+                             foreignKeyName="Client_Account_Id"
+                             nullable="false"/>
+            </column>
+            <column name="FIRST_NAME" type="varchar(64)"/>
+            <column name="LAST_NAME" type="varchar(64)"/>
+            <column name="FATHER_NAME" type="varchar(64)"/>
+            <column name="PHONE_NUMBER" type="varchar(20)"/>
+        </createTable>
+
+        <createTable tableName="restaurant">
+            <column name="RESTAURANT_ID" type="uuid">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="NAME" type="varchar(40)">
+            </column>
+            <column name="OWNER" type="uuid">
+                <constraints references="RESTAURATEUR(RESTAURATEUR_ID)"
+                             foreignKeyName="Restaurant_Restaurateur_Id"
+                             nullable="false"/>
+            </column>
+            <column name="LOCATION" type="varchar(100)">
+            </column>
+        </createTable>
+
+        <createTable tableName="menu">
+            <column name="MENU_ID" type="uuid">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="RESTAURANT_ID" type="uuid">
+                <constraints references="RESTAURANT(RESTAURANT_ID)"
+                             foreignKeyName="Menu_Restaurant_Id"
+                             nullable="false"/>
+            </column>
+            <column name="NAME" type="varchar(64)"/>
+            <column name="LAST_UPDATE_TIME" type="timestamp"/>
+        </createTable>
+    </changeSet>
+
+
 </databaseChangeLog>
