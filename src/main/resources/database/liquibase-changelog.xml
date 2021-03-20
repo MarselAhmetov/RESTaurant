@@ -81,7 +81,7 @@
         </createTable>
 
         <createTable tableName="menu">
-            <column name="MENU_ID" type="uuid">
+            <column name="MENU_ID" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true"/>
             </column>
             <column name="RESTAURANT_ID" type="uuid">
@@ -91,6 +91,25 @@
             </column>
             <column name="NAME" type="varchar(64)"/>
             <column name="LAST_UPDATE_TIME" type="timestamp"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="20.03.1800" author="marsel">
+        <createTable tableName="dish">
+            <column name="DISH_ID" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="MENU_ID" type="bigint">
+                <constraints references="MENU(MENU_ID)"
+                             foreignKeyName="Dish_Menu_Id"
+                             nullable="false"/>
+            </column>
+            <column name="NAME" type="varchar(128)"/>
+            <column name="COST" type="bigint"/>
+            <column name="DESCRIPTION" type="varchar(512)"/>
+            <column name="COMPOSITION" type="varchar(512)"/>
+            <column name="WEIGHT" type="int"/>
+            <column name="DISH_TYPE" type="varchar(128)"/>
         </createTable>
     </changeSet>
 

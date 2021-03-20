@@ -27,6 +27,9 @@ public class RestaurateurServiceImpl implements RestaurateurService {
         Restaurateur restaurateur;
         if (restaurateurDto.getId() != null) {
             restaurateur = simpleDao.findById(Restaurateur.class, restaurateurDto.getId());
+            if (restaurateur == null) {
+                throw new IllegalArgumentException("Restaurateur with such id does not exists");
+            }
         } else {
             restaurateur = new Restaurateur();
         }
@@ -54,7 +57,7 @@ public class RestaurateurServiceImpl implements RestaurateurService {
         if (restaurateur !=  null) {
             restaurateurDto = mapper.map(restaurateur, RestaurateurDto.class);
         } else {
-            throw new IllegalArgumentException("Restaurateur not found");
+            throw new IllegalArgumentException("You are not restaurateur");
         }
         return restaurateurDto;
     }

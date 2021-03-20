@@ -9,8 +9,9 @@
         <mapping class="team404.restaurant.restaurant.model.Restaurant"/>
         <mapping class="team404.restaurant.client.model.Client"/>
         <mapping class="team404.restaurant.employee.model.Employee"/>
-        <mapping class="team404.restaurant.general.model.Menu"/>
+        <mapping class="team404.restaurant.menu.model.Menu"/>
         <mapping class="team404.restaurant.restaurateur.model.Restaurateur"/>
+        <mapping class="team404.restaurant.dish.model.Dish"/>
     </session-factory>
 
 </hibernate-configuration>
