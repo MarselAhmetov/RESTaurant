@@ -33,7 +33,7 @@ public class DishController {
     @ApiOperation(value = "Get dishes in menu")
     @PreAuthorize("hasAuthority('RESTAURATEUR')")
     @GetMapping("/api/dish")
-    public List<DishDto> getAllByMenuId(@ApiParam(name = "Menu id") @RequestParam Long menuId) {
+    public List<DishDto> getAllByMenuId(@RequestParam Long menuId) {
         return dishService.getAllByMenuId(menuId);
     }
 }

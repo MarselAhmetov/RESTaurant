@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import team404.restaurant.restaurant.dto.RestaurantDto;
 import team404.restaurant.restaurant.dto.RestaurantFilter;
@@ -35,5 +36,13 @@ public class RestaurantController {
     @GetMapping("/api/restaurant/{restaurantId}")
     public RestaurantDto getRestaurant(@PathVariable UUID restaurantId) {
         return restaurantService.getRestaurantById(restaurantId);
+    }
+
+    @GetMapping("/api/restaurant")
+        public List<RestaurantDto> getRestaurants(@RequestParam(required = false, name = "restaurateurId") UUID restaurateurId) {
+        RestaurantFilter filter = RestaurantFilter.builder()
+                .restaurateurId(restaurateurId)
+                .build();
+        return restaurantService.getRestaurants(filter);
     }
 }
