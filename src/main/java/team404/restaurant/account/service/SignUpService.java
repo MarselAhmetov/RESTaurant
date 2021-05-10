@@ -1,7 +1,7 @@
 package team404.restaurant.account.service;
 
-import team404.restaurant.account.dto.AccountDto;
+import team404.restaurant.account.dto.SignUpDto;
 
 public interface SignUpService {
-    void signUp(AccountDto accountDto);
+    void signUp(SignUpDto signInDto);
 }

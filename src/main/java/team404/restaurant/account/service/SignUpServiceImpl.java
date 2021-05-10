@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import team404.restaurant.account.dto.SignUpDto;
 import team404.restaurant.account.model.Account;
 import team404.restaurant.account.model.Role;
 import team404.restaurant.client.model.Client;
@@ -23,15 +24,15 @@ public class SignUpServiceImpl implements SignUpService{
 
     @Override
     @Transactional
-    public void signUp(AccountDto accountDto) {
+    public void signUp(SignUpDto signUpDto) {
         Account account = Account.builder()
-                .email(accountDto.getEmail())
-                .password(passwordEncoder.encode(accountDto.getPassword()))
-                .role(Role.valueOf(accountDto.getRole()))
+                .email(signUpDto.getEmail())
+                .password(passwordEncoder.encode(signUpDto.getPassword()))
+                .role(Role.valueOf(signUpDto.getRole()))
                 .build();
         accountRepository.save(account);
 
-        switch (Role.valueOf(accountDto.getRole())) {
+        switch (Role.valueOf(signUpDto.getRole())) {
             case CLIENT:
                 Client client = new Client();
                 client.setAccount(account);

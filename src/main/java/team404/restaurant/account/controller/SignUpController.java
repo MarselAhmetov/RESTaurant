@@ -7,7 +7,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import team404.restaurant.account.dto.AccountDto;
+import team404.restaurant.account.dto.SignUpDto;
 import team404.restaurant.account.service.SignUpService;
 
 @Api(value = "Registration")
@@ -19,7 +19,7 @@ public class SignUpController {
 
     @ApiOperation(value = "Register endpoint")
     @PostMapping("/api/signup")
-    public void signUpRestaurateur(@ApiParam @RequestBody AccountDto accountDto) {
-        signUpService.signUp(accountDto);
+    public void signUpRestaurateur(@ApiParam @RequestBody SignUpDto signUpDto) {
+        signUpService.signUp(signUpDto);
     }
 }
