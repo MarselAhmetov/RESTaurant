@@ -4,5 +4,5 @@ import java.io.File;
 import java.io.IOException;
 
 public interface QRService {
-    File generateQRCode(String barcodeText) throws IOException;
+    File generateQRCode(String barcodeText, String fileName);
 }

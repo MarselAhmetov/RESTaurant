@@ -6,7 +6,8 @@ import java.util.List;
 import java.util.UUID;
 
 public interface TableService {
-    void submit(TableDto tableDto);
+    void save(TableDto tableDto);
+    void edit(TableDto tableDto);
     void createTableQR(UUID tableId);
     TableDto getTable(UUID tableId);
     List<TableDto> getTablesInRestaurant(UUID restaurantId);

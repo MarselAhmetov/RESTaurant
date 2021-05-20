@@ -10,23 +10,28 @@ import team404.restaurant.restaurant.model.Restaurant;
 import javax.persistence.AttributeOverride;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import java.util.UUID;
 
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@javax.persistence.Table(name = "TABLE")
+@javax.persistence.Table(name = "TABLE_")
 @AttributeOverride(name = "id", column = @Column(name = "TABLE_ID"))
 public class Table extends UuidIdEntity {
 
+    @Enumerated(EnumType.STRING)
+    @Column(name = "STATUS")
+    private TableStatus status;
+
+    @Column(name = "SEAT_COUNT")
     private Integer seatCount;
-    private Long number;
-    private UUID token;
+
     @ManyToOne
-    @JoinColumn(name = "MENU_ID")
+    @JoinColumn(name = "RESTAURANT_ID")
     private Restaurant restaurant;
 }

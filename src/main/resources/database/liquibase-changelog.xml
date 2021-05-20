@@ -113,5 +113,20 @@
         </createTable>
     </changeSet>
 
+    <changeSet id="20.05.1723" author="marsel">
+        <createTable tableName="TABLE_">
+            <column name="TABLE_ID" type="uuid">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="STATUS" type="varchar(128)"/>
+            <column name="SEAT_COUNT" type="int"/>
+            <column name="RESTAURANT_ID" type="uuid">
+                <constraints references="RESTAURANT(RESTAURANT_ID)"
+                             foreignKeyName="Menu_Restaurant_Id"
+                             nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
 
 </databaseChangeLog>
