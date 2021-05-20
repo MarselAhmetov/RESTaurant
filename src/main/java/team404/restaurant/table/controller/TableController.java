@@ -1,8 +1,7 @@
 package team404.restaurant.table.controller;
 
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiParam;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -22,28 +21,28 @@ import java.io.File;
 import java.io.IOException;
 import java.util.UUID;
 
-@Api(value = "Table controller")
+@Tag(name = "Table", description = "Table controller")
 @RestController
 @RequiredArgsConstructor
 public class TableController {
 
     private final TableService tableService;
 
-    @ApiOperation(value = "Add table")
+    @Operation(summary = "Add table")
     @PreAuthorize("hasAuthority('RESTAURATEUR')")
     @PostMapping("/api/table")
-    public void addTable(@ApiParam(name = "Table information") @RequestBody TableDto tableDto) {
+    public void addTable(@RequestBody TableDto tableDto) {
         tableService.save(tableDto);
     }
 
-    @ApiOperation(value = "Get tables in Restaurant ")
+    @Operation(summary = "Get tables in Restaurant ")
     @PreAuthorize("isAuthenticated()")
     @GetMapping("/api/tables")
-    public void getTablesInRestaurant(@ApiParam(name = "Restaurant id") @RequestParam UUID restaurantId) {
+    public void getTablesInRestaurant(@RequestParam UUID restaurantId) {
         tableService.getTablesInRestaurant(restaurantId);
     }
 
-    @ApiOperation(value = "Get tables in Restaurant ")
+    @Operation(summary = "Get QR image for table")
     @GetMapping("/api/table/qr")
     public ResponseEntity index(@RequestParam String tableId) throws IOException {
         BufferedImage bufferedImage = ImageIO.read(new File("qr_" + tableId + ".png"));

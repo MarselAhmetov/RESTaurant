@@ -1,8 +1,7 @@
 package team404.restaurant.restaurant.controller;
 
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiParam;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,7 +17,7 @@ import team404.restaurant.restaurant.service.RestaurantService;
 import java.util.List;
 import java.util.UUID;
 
-@Api(value = "Restaurant Controller")
+@Tag(name = "Restaurant")
 @RestController
 @RequiredArgsConstructor
 @PreAuthorize("isAuthenticated()")
@@ -26,10 +25,10 @@ public class RestaurantController {
 
     private final RestaurantService restaurantService;
 
-    @ApiOperation(value = "Add restaurant endpoint")
+    @Operation(summary = "Add restaurant endpoint")
     @PreAuthorize("hasAuthority('RESTAURATEUR')")
     @PostMapping("/api/restaurant")
-    public void addRestaurant(@ApiParam(name = "Information of restaurant") @RequestBody RestaurantDto restaurantDto) {
+    public void addRestaurant(@RequestBody RestaurantDto restaurantDto) {
         restaurantService.addRestaurant(restaurantDto);
     }
 
@@ -39,7 +38,7 @@ public class RestaurantController {
     }
 
     @GetMapping("/api/restaurant")
-        public List<RestaurantDto> getRestaurants(@RequestParam(required = false, name = "restaurateurId") UUID restaurateurId) {
+        public List<RestaurantDto> getRestaurants(@RequestParam(name = "restaurateurId") UUID restaurateurId) {
         RestaurantFilter filter = RestaurantFilter.builder()
                 .restaurateurId(restaurateurId)
                 .build();
