@@ -12,13 +12,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import team404.restaurant.general.service.QRService;
 import team404.restaurant.table.dto.TableDto;
 import team404.restaurant.table.service.TableService;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
-import java.io.File;
 import java.io.IOException;
 import java.util.List;
 import java.util.UUID;
@@ -30,6 +30,7 @@ import java.util.UUID;
 public class TableController {
 
     private final TableService tableService;
+    private final QRService qrService;
 
     @Operation(summary = "Add table")
     @PreAuthorize("hasAuthority('RESTAURATEUR')")
@@ -52,8 +53,10 @@ public class TableController {
 
     @Operation(summary = "Get QR image for table")
     @GetMapping("/api/table/qr")
-    public ResponseEntity index(@RequestParam String tableId) throws IOException {
-        BufferedImage bufferedImage = ImageIO.read(new File("qr_" + tableId + ".png"));
+    public ResponseEntity index(@RequestParam UUID tableId) throws IOException {
+        TableDto table = tableService.getTable(tableId);
+        String barcodeText = "http://restaurant404.tilda.ws?tableId=" + table.getId();
+        BufferedImage bufferedImage = ImageIO.read(qrService.getQRCode(barcodeText, table.getId().toString()));
 
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
         ImageIO.write(bufferedImage, "png", stream);
