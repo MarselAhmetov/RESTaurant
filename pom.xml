@@ -13,7 +13,7 @@
     <version>1</version>
     <name>restaurant</name>
     <properties>
-        <java.version>8</java.version>
+        <java.version>10</java.version>
     </properties>
     <dependencies>
         <dependency>
