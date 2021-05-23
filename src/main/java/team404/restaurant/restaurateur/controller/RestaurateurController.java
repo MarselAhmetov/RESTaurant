@@ -4,7 +4,11 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+import team404.restaurant.employee.dto.EmployeeWithPasswordDto;
 import team404.restaurant.restaurateur.dto.RestaurateurDto;
 import team404.restaurant.restaurateur.service.RestaurateurService;
 
@@ -17,7 +21,6 @@ public class RestaurateurController {
 
     @Operation(summary = "Restaurateur submit")
     @PostMapping("/api/restaurateur")
-    @ResponseBody
     public void submitRestaurateur(@RequestBody RestaurateurDto restaurateurDto) {
         restaurateurService.submit(restaurateurDto);
     }
@@ -25,8 +28,14 @@ public class RestaurateurController {
     @Operation(summary = "Get information about current restaurateur")
     @GetMapping("/api/restaurateur")
     @PreAuthorize("isAuthenticated()")
-    @ResponseBody
     public RestaurateurDto getCurrentRestaurateur() {
         return restaurateurService.getCurrentRestaurateur();
+    }
+
+    @Operation(summary = "Get information about current restaurateur")
+    @PostMapping("/api/restaurateur/employee")
+    @PreAuthorize("hasAuthority('RESTAURATEUR')")
+    public void createEmployeeAccount(@RequestBody EmployeeWithPasswordDto employee) {
+        restaurateurService.createEmployeeAccount(employee);
     }
 }

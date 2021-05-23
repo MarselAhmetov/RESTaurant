@@ -128,5 +128,69 @@
         </createTable>
     </changeSet>
 
+    <changeSet id="22.05.1811" author="marsel">
+        <createTable tableName="ORDER_">
+            <column name="ORDER_ID" type="uuid">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="STATUS" type="varchar(128)"/>
+            <column name="RESTAURANT_ID" type="uuid">
+                <constraints references="RESTAURANT(RESTAURANT_ID)"
+                             foreignKeyName="order_restaurant_id"
+                             nullable="false"/>
+            </column>
+            <column name="TABLE_ID" type="uuid">
+                <constraints references="TABLE_(TABLE_ID)"
+                             foreignKeyName="order_table_id"
+                             nullable="false"/>
+            </column>
+            <column name="EMPLOYEE_ID" type="uuid">
+                <constraints references="EMPLOYEE(EMPLOYEE_ID)"
+                             foreignKeyName="order_employee_id"/>
+            </column>
+        </createTable>
+        <createTable tableName="POSITION">
+            <column name="POSITION_ID" type="bigint">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="STATUS" type="varchar(128)"/>
+            <column name="EMPLOYEE_ID" type="uuid">
+                <constraints references="EMPLOYEE(EMPLOYEE_ID)"
+                             foreignKeyName="position_employee_id"/>
+            </column>
+            <column name="DISH_ID" type="bigint">
+                <constraints references="DISH(DISH_ID)"
+                             foreignKeyName="position_dish_id"/>
+            </column>
+        </createTable>
+        <createTable tableName="POSITION_ORDER_REL">
+            <column name="ORDER_ID" type="uuid">
+                <constraints references="ORDER_(ORDER_ID)"
+                             foreignKeyName="order_rel_id"
+                             nullable="false"/>
+            </column>
+            <column name="POSITION_ID" type="bigint">
+                <constraints references="POSITION(POSITION_ID)"
+                             foreignKeyName="position_rel_id"
+                             nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
 
+    <changeSet id="22.05.1857" author="marsel">
+        <addColumn tableName="EMPLOYEE">
+            <column name="RESTAURANT_ID" type="uuid">
+                <constraints references="RESTAURANT(RESTAURANT_ID)"
+                             foreignKeyName="employee_restaurant_id"/>
+            </column>
+        </addColumn>
+    </changeSet>
+    <changeSet id="23.05.1305" author="marsel">
+        <addColumn tableName="EMPLOYEE">
+            <column name="PASSWORD" type="varchar(128)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet id="23.05.1418" author="marsel">
+        <renameColumn tableName="POSITION" oldColumnName="EMPLOYEE_ID" newColumnName="COOK_ID"/>
+    </changeSet>
 </databaseChangeLog>

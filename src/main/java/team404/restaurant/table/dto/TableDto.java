@@ -10,4 +10,5 @@ import team404.restaurant.restaurant.dto.RestaurantDto;
 public class TableDto extends UuidIdDto {
     private Integer seatCount;
     private RestaurantDto restaurant;
+    private String status;
 }

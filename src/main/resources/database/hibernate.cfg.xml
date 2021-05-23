@@ -13,6 +13,8 @@
         <mapping class="team404.restaurant.restaurateur.model.Restaurateur"/>
         <mapping class="team404.restaurant.dish.model.Dish"/>
         <mapping class="team404.restaurant.table.model.Table"/>
+        <mapping class="team404.restaurant.order.model.Order"/>
+        <mapping class="team404.restaurant.position.model.Position"/>
     </session-factory>
 
 </hibernate-configuration>

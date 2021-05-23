@@ -19,6 +19,7 @@ import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 import java.util.UUID;
 
 @Tag(name = "Table", description = "Table controller")
@@ -36,10 +37,15 @@ public class TableController {
     }
 
     @Operation(summary = "Get tables in Restaurant ")
-    @PreAuthorize("isAuthenticated()")
     @GetMapping("/api/tables")
-    public void getTablesInRestaurant(@RequestParam UUID restaurantId) {
-        tableService.getTablesInRestaurant(restaurantId);
+    public List<TableDto> getTablesInRestaurant(@RequestParam UUID restaurantId) {
+        return tableService.getTablesInRestaurant(restaurantId);
+    }
+
+    @Operation(summary = "Add table")
+    @PostMapping("/api/table/reserve")
+    public void reserveTable(@RequestBody TableDto table) {
+        tableService.reserveTable(table.getId());
     }
 
     @Operation(summary = "Get QR image for table")

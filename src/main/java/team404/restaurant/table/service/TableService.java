@@ -11,4 +11,5 @@ public interface TableService {
     void createTableQR(UUID tableId);
     TableDto getTable(UUID tableId);
     List<TableDto> getTablesInRestaurant(UUID restaurantId);
+    void reserveTable(UUID tableId);
 }

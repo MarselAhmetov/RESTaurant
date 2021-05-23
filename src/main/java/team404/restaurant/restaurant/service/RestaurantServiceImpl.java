@@ -9,7 +9,7 @@ import team404.restaurant.restaurant.dto.RestaurantFilter;
 import team404.restaurant.restaurant.model.Restaurant;
 import team404.restaurant.restaurateur.model.Restaurateur;
 import team404.restaurant.restaurant.dto.RestaurantDto;
-import team404.restaurant.general.repository.RestaurantRepository;
+import team404.restaurant.restaurant.repository.RestaurantRepository;
 import team404.restaurant.general.repository.RestaurateurRepository;
 import team404.restaurant.general.security.jwt.details.UserDetailsImpl;
 

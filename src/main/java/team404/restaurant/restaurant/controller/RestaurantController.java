@@ -44,4 +44,5 @@ public class RestaurantController {
                 .build();
         return restaurantService.getRestaurants(filter);
     }
+
 }

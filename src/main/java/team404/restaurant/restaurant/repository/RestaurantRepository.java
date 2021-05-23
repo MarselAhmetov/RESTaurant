@@ -1,4 +1,4 @@
-package team404.restaurant.general.repository;
+package team404.restaurant.restaurant.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import team404.restaurant.restaurant.model.Restaurant;
