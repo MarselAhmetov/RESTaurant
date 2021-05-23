@@ -50,6 +50,7 @@ public class RestaurantServiceImpl implements RestaurantService {
         return restaurantDto;
     }
 
+    @Deprecated
     @Override
     public List<RestaurantDto> getRestaurants(RestaurantFilter filter) {
         // TODO: 28.04.2021 Переписать на критерии (не срочно)
@@ -60,6 +61,18 @@ public class RestaurantServiceImpl implements RestaurantService {
         } else {
             restaurants = restaurantRepository.findAll();
         }
+        return mapper.mapAsList(restaurants, RestaurantDto.class);
+    }
+
+    @Override
+    public List<RestaurantDto> getRestaurants() {
+        List<Restaurant> restaurants = restaurantRepository.findAll();
+        return mapper.mapAsList(restaurants, RestaurantDto.class);
+    }
+
+    @Override
+    public List<RestaurantDto> getRestaurantsByRestaurateur(UUID restaurateurId) {
+        List<Restaurant> restaurants = restaurantRepository.getAllByOwner_Id(restaurateurId);
         return mapper.mapAsList(restaurants, RestaurantDto.class);
     }
 }

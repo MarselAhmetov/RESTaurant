@@ -17,7 +17,6 @@ import java.util.List;
 @Tag(name = "Dish")
 @RestController
 @RequiredArgsConstructor
-@PreAuthorize("isAuthenticated()")
 public class DishController {
 
     private final DishService dishService;
@@ -30,7 +29,6 @@ public class DishController {
     }
 
     @Operation(summary = "Get dishes in menu")
-    @PreAuthorize("hasAuthority('RESTAURATEUR')")
     @GetMapping("/api/dish")
     public List<DishDto> getAllByMenuId(@RequestParam Long menuId) {
         return dishService.getAllByMenuId(menuId);

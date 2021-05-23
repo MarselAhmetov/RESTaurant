@@ -50,6 +50,12 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
+    public OrderDto getById(UUID orderId) {
+        Order order = orderRepository.findById(orderId).orElseThrow();
+        return mapper.map(order, OrderDto.class);
+    }
+
+    @Override
     @Transactional
     public Boolean takeOrder(OrderDto orderDto) {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
@@ -89,5 +95,11 @@ public class OrderServiceImpl implements OrderService {
         order.setStatus(OrderStatus.CLOSED);
         order.getTable().setStatus(TableStatus.FREE);
         simpleDao.update(order);
+    }
+
+    @Override
+    public OrderDto getOrderByTable(UUID tableId) {
+        Order order = orderRepository.getByTable_Id(tableId);
+        return mapper.map(order, OrderDto.class);
     }
 }

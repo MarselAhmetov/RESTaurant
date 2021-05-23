@@ -5,6 +5,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -14,6 +15,7 @@ import team404.restaurant.order.model.OrderStatus;
 import team404.restaurant.order.service.OrderService;
 
 import java.util.List;
+import java.util.UUID;
 
 @Tag(name = "Order")
 @RestController
@@ -35,6 +37,20 @@ public class OrderController {
     @PreAuthorize("hasAuthority('WAITER')")
     public void closeOrder(@RequestBody OrderDto order) {
         orderService.closeOrder(order);
+    }
+
+    @Operation(summary = "Get order by table")
+    @GetMapping("/api/order/table")
+    @PreAuthorize("hasAuthority('WAITER')")
+    public OrderDto getOrderByTable(@RequestParam UUID tableId) {
+        return orderService.getOrderByTable(tableId);
+    }
+
+    @Operation(summary = "Get order by id")
+    @GetMapping("/api/order/{orderId}")
+    @PreAuthorize("hasAuthority('WAITER')")
+    public OrderDto getOrderById(@PathVariable UUID orderId) {
+        return orderService.getById(orderId);
     }
 
     @Operation(summary = "Get waiter active orders")

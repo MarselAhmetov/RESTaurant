@@ -10,4 +10,7 @@ public interface RestaurantService {
     void addRestaurant(RestaurantDto restaurantDto);
     RestaurantDto getRestaurantById(UUID restaurantId);
     List<RestaurantDto> getRestaurants(RestaurantFilter filter);
+    List<RestaurantDto> getRestaurants();
+    List<RestaurantDto> getRestaurantsByRestaurateur(UUID restaurateurId);
+
 }

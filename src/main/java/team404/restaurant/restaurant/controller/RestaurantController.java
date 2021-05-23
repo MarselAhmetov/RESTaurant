@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import team404.restaurant.restaurant.dto.RestaurantDto;
-import team404.restaurant.restaurant.dto.RestaurantFilter;
 import team404.restaurant.restaurant.service.RestaurantService;
 
 import java.util.List;
@@ -20,29 +19,34 @@ import java.util.UUID;
 @Tag(name = "Restaurant")
 @RestController
 @RequiredArgsConstructor
-@PreAuthorize("isAuthenticated()")
 public class RestaurantController {
 
     private final RestaurantService restaurantService;
 
-    @Operation(summary = "Add restaurant endpoint")
+    @Operation(summary = "Add restaurant")
     @PreAuthorize("hasAuthority('RESTAURATEUR')")
     @PostMapping("/api/restaurant")
     public void addRestaurant(@RequestBody RestaurantDto restaurantDto) {
         restaurantService.addRestaurant(restaurantDto);
     }
 
+    @Operation(summary = "Get restaurant by id")
     @GetMapping("/api/restaurant/{restaurantId}")
     public RestaurantDto getRestaurant(@PathVariable UUID restaurantId) {
         return restaurantService.getRestaurantById(restaurantId);
     }
 
+    @Operation(summary = "Get restaurants")
     @GetMapping("/api/restaurant")
-        public List<RestaurantDto> getRestaurants(@RequestParam(name = "restaurateurId") UUID restaurateurId) {
-        RestaurantFilter filter = RestaurantFilter.builder()
-                .restaurateurId(restaurateurId)
-                .build();
-        return restaurantService.getRestaurants(filter);
+    public List<RestaurantDto> getRestaurants() {
+        return restaurantService.getRestaurants();
+    }
+
+    @Operation(summary = "Get restaurants by restaurantId")
+    @PreAuthorize("hasAuthority('RESTAURATEUR')")
+    @GetMapping("/api/restaurant/restaurateur")
+    public List<RestaurantDto> getRestaurantsByRestaurantId(@RequestParam UUID restaurateurId) {
+        return restaurantService.getRestaurantsByRestaurateur(restaurateurId);
     }
 
 }

@@ -24,14 +24,14 @@ public class EmployeeController {
 
     private final EmployeeService employeeService;
 
-    @Operation(summary = "Get information about current restaurateur")
+    @Operation(summary = "Get employees information by restaurant id")
     @GetMapping("/api/employee/restaurant")
     @PreAuthorize("hasAuthority('RESTAURATEUR')")
     public List<EmployeeDto> getEmployeesInRestaurant(@RequestParam UUID restaurantId) {
         return employeeService.getEmployeesByRestaurant(restaurantId);
     }
 
-    @Operation(summary = "Get information about current restaurateur")
+    @Operation(summary = "Get employee with password by employee id")
     @GetMapping("/api/employee/account/{employeeId}")
     @PreAuthorize("hasAuthority('RESTAURATEUR')")
     public EmployeeWithPasswordDto getEmployeeWithPassword(@PathVariable UUID employeeId) {

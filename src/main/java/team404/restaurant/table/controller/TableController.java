@@ -36,13 +36,13 @@ public class TableController {
         tableService.save(tableDto);
     }
 
-    @Operation(summary = "Get tables in Restaurant ")
+    @Operation(summary = "Get tables in Restaurant")
     @GetMapping("/api/tables")
     public List<TableDto> getTablesInRestaurant(@RequestParam UUID restaurantId) {
         return tableService.getTablesInRestaurant(restaurantId);
     }
 
-    @Operation(summary = "Add table")
+    @Operation(summary = "Reserve table")
     @PostMapping("/api/table/reserve")
     public void reserveTable(@RequestBody TableDto table) {
         tableService.reserveTable(table.getId());

@@ -1,3 +1,530 @@
+GET http://localhost:80/api/tables?restaurantId=d884be84-156e-4acb-9882-ceba57a4bac1
+Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1In0.PFqgdSmJZun7jHR3vHdK2coIpqmb4L0CKg5Bmby6peQ
+
+<> 2021-05-23T160547.200.json
+
+###
+
+POST http://localhost:80/api/restaurateur/employee
+Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxNSJ9.41E5Vlxr5L0gxtOdkS8OiRLDCbM42ZIw3SVgUBd5CXg
+Content-Type: application/json
+
+{
+  "firstName": "Влад",
+  "lastName": "Бузанов",
+  "fatherName": "Олегович",
+  "phoneNumber": "88005553535",
+  "role": "WAITER",
+  "password": "123",
+  "restaurant": {
+    "id": "d884be84-156e-4acb-9882-ceba57a4bac1"
+  },
+  "account": {
+    "email": "VOBuzanov@gmail.com"
+  }
+}
+
+###
+
+POST http://localhost:80/api/restaurateur/employee
+Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxNSJ9.41E5Vlxr5L0gxtOdkS8OiRLDCbM42ZIw3SVgUBd5CXg
+Content-Type: application/json
+
+{
+  "firstName": "Влад",
+  "lastName": "Бузанов",
+  "fatherName": "Олегович",
+  "phoneNumber": "88005553535",
+  "role": "COOK",
+  "password": "123",
+  "restaurant": {
+    "id": "d884be84-156e-4acb-9882-ceba57a4bac1"
+  },
+  "account": {
+    "email": "VOBuzanov234@gmail.com"
+  }
+}
+
+###
+
+POST http://localhost:80/api/table
+Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxNSJ9.41E5Vlxr5L0gxtOdkS8OiRLDCbM42ZIw3SVgUBd5CXg
+Content-Type: application/json
+
+{
+  "seatCount": "2",
+  "restaurant": {
+    "id": "d884be84-156e-4acb-9882-ceba57a4bac1"
+  }
+}
+
+###
+
+POST http://localhost:80/api/table
+Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxNSJ9.41E5Vlxr5L0gxtOdkS8OiRLDCbM42ZIw3SVgUBd5CXg
+Content-Type: application/json
+
+{
+  "seatCount": "2",
+  "restaurant": {
+    "id": "d884be84-156e-4acb-9882-ceba57a4bac1"
+  }
+}
+
+###
+
+POST http://localhost:80/api/table
+Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxNSJ9.41E5Vlxr5L0gxtOdkS8OiRLDCbM42ZIw3SVgUBd5CXg
+Content-Type: application/json
+
+{
+  "seatCount": "2",
+  "restaurant": {
+    "id": "d884be84-156e-4acb-9882-ceba57a4bac1"
+  }
+}
+
+###
+
+POST http://localhost:80/api/table
+Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxNSJ9.41E5Vlxr5L0gxtOdkS8OiRLDCbM42ZIw3SVgUBd5CXg
+Content-Type: application/json
+
+{
+  "seatCount": "2",
+  "restaurant": {
+    "id": "d884be84-156e-4acb-9882-ceba57a4bac1"
+  }
+}
+
+###
+
+POST http://localhost:80/api/table
+Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxNSJ9.41E5Vlxr5L0gxtOdkS8OiRLDCbM42ZIw3SVgUBd5CXg
+Content-Type: application/json
+
+{
+  "seatCount": "4",
+  "restaurant": {
+    "id": "d884be84-156e-4acb-9882-ceba57a4bac1"
+  }
+}
+
+###
+
+POST http://localhost:80/api/table
+Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxNSJ9.41E5Vlxr5L0gxtOdkS8OiRLDCbM42ZIw3SVgUBd5CXg
+Content-Type: application/json
+
+{
+  "seatCount": "4",
+  "restaurant": {
+    "id": "d884be84-156e-4acb-9882-ceba57a4bac1"
+  }
+}
+
+###
+
+POST http://localhost:80/api/table
+Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxNSJ9.41E5Vlxr5L0gxtOdkS8OiRLDCbM42ZIw3SVgUBd5CXg
+Content-Type: application/json
+
+{
+  "seatCount": "6",
+  "restaurant": {
+    "id": "d884be84-156e-4acb-9882-ceba57a4bac1"
+  }
+}
+
+###
+
+POST http://localhost:80/api/table
+Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxNSJ9.41E5Vlxr5L0gxtOdkS8OiRLDCbM42ZIw3SVgUBd5CXg
+Content-Type: application/json
+
+{
+  "seatCount": "6",
+  "restaurant": {
+    "id": "d884be84-156e-4acb-9882-ceba57a4bac1"
+  }
+}
+
+###
+
+POST http://localhost:80/api/table
+Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxNSJ9.41E5Vlxr5L0gxtOdkS8OiRLDCbM42ZIw3SVgUBd5CXg
+Content-Type: application/json
+
+{
+  "seatCount": "4",
+  "restaurant": {
+    "id": "d884be84-156e-4acb-9882-ceba57a4bac1"
+  }
+}
+
+###
+
+POST http://localhost:80/api/table
+Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxNSJ9.41E5Vlxr5L0gxtOdkS8OiRLDCbM42ZIw3SVgUBd5CXg
+Content-Type: application/json
+
+{
+  "seatCount": "4",
+  "restaurant": {
+    "id": "d884be84-156e-4acb-9882-ceba57a4bac1"
+  }
+}
+
+###
+
+POST http://localhost:80/api/table
+Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxNSJ9.41E5Vlxr5L0gxtOdkS8OiRLDCbM42ZIw3SVgUBd5CXg
+Content-Type: application/json
+
+{
+  "seatCount": "2",
+  "restaurant": {
+    "id": "d884be84-156e-4acb-9882-ceba57a4bac1"
+  }
+}
+
+###
+
+GET http://localhost:80/api/restaurant?restaurateurId=ff1a2f4d-c386-482f-9f34-a8b35ff1bc16
+Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxNSJ9.41E5Vlxr5L0gxtOdkS8OiRLDCbM42ZIw3SVgUBd5CXg
+
+<> 2021-05-23T160245.200.json
+
+###
+
+GET http://localhost:80/api/restaurateur
+Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxNSJ9.41E5Vlxr5L0gxtOdkS8OiRLDCbM42ZIw3SVgUBd5CXg
+
+<> 2021-05-23T160234.200.json
+
+###
+
+POST http://localhost:80/api/dish
+Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxNSJ9.41E5Vlxr5L0gxtOdkS8OiRLDCbM42ZIw3SVgUBd5CXg
+Content-Type: application/json
+
+{
+  "composition": "Спрайт",
+  "cost": 100,
+  "description": "Крутой напиток спрайт",
+  "dishType": "DRINK",
+  "menu": {
+    "id": 1
+  },
+  "name": "Кола",
+  "weight": 200
+}
+
+###
+
+POST http://localhost:80/api/dish
+Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxNSJ9.41E5Vlxr5L0gxtOdkS8OiRLDCbM42ZIw3SVgUBd5CXg
+Content-Type: application/json
+
+{
+  "composition": "Кола",
+  "cost": 100,
+  "description": "Крутой напиток кола",
+  "dishType": "DRINK",
+  "menu": {
+    "id": 1
+  },
+  "name": "Кола",
+  "weight": 200
+}
+
+###
+
+POST http://localhost:80/api/dish
+Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1In0.PFqgdSmJZun7jHR3vHdK2coIpqmb4L0CKg5Bmby6peQ
+Content-Type: application/json
+
+{
+  "composition": "Кола",
+  "cost": 100,
+  "description": "Крутой напиток кола",
+  "dishType": "DRINK",
+  "menu": {
+    "id": 1
+  },
+  "name": "Кола",
+  "weight": 200
+}
+
+<> 2021-05-23T160139.500.json
+
+###
+
+POST http://localhost:80/api/dish
+Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxNSJ9.41E5Vlxr5L0gxtOdkS8OiRLDCbM42ZIw3SVgUBd5CXg
+Content-Type: application/json
+
+{
+  "composition": "Три помидора",
+  "cost": 400,
+  "description": "Тарелка с тремя помидорами",
+  "dishType": "SALAD",
+  "menu": {
+    "id": 2
+  },
+  "name": "Триопомидорио",
+  "weight": 150
+}
+
+###
+
+POST http://localhost:80/api/dish
+Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxNSJ9.41E5Vlxr5L0gxtOdkS8OiRLDCbM42ZIw3SVgUBd5CXg
+Content-Type: application/json
+
+{
+  "composition": "Два помидора",
+  "cost": 250,
+  "description": "Тарелка с двумя помидорами",
+  "dishType": "SALAD",
+  "menu": {
+    "id": 2
+  },
+  "name": "Дуопомидорио",
+  "weight": 100
+}
+
+###
+
+POST http://localhost:80/api/menu
+Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxNSJ9.41E5Vlxr5L0gxtOdkS8OiRLDCbM42ZIw3SVgUBd5CXg
+Content-Type: application/json
+
+{
+  "name": "Salads",
+  "restaurant": {
+    "id": "d884be84-156e-4acb-9882-ceba57a4bac1"
+  }
+}
+
+###
+
+POST http://localhost:80/api/menu
+Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxNSJ9.41E5Vlxr5L0gxtOdkS8OiRLDCbM42ZIw3SVgUBd5CXg
+Content-Type: application/json
+
+{
+  "name": "Drinks",
+  "restaurant": {
+    "id": "d884be84-156e-4acb-9882-ceba57a4bac1"
+  }
+}
+
+###
+
+GET http://localhost:80/api/restaurant
+
+<> 2021-05-23T155943.200.json
+
+###
+
+GET http://localhost:80/api/restaurant
+
+<> 2021-05-23T155828.500.json
+
+###
+
+POST http://localhost:80/api/signIn
+Content-Type: application/json
+
+{
+  "email": "Restaurateur",
+  "password": "123"
+}
+
+<> 2021-05-23T155823.200.json
+
+###
+
+GET http://localhost:80/api/restaurant
+
+<> 2021-05-23T155806.500.json
+
+###
+
+GET http://localhost:80/api/restaurant
+
+<> 2021-05-23T155710.500.json
+
+###
+
+GET http://localhost:80/api/restaurant
+
+<> 2021-05-23T155414.403.json
+
+###
+
+GET http://localhost:80/api/restaurant
+
+<> 2021-05-23T155411.403.json
+
+###
+
+GET http://localhost:80/api/restaurant
+
+<> 2021-05-23T155219.403.json
+
+###
+
+POST http://localhost:80/api/restaurant
+Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxNSJ9.41E5Vlxr5L0gxtOdkS8OiRLDCbM42ZIw3SVgUBd5CXg
+Content-Type: application/json
+
+{
+  "name": "Restaurant",
+  "location": "Kazan"
+}
+
+###
+
+POST http://localhost:80/api/restaurant
+Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1In0.PFqgdSmJZun7jHR3vHdK2coIpqmb4L0CKg5Bmby6peQ
+Content-Type: application/json
+
+{
+  "name": "Restaurant",
+  "location": "Kazan"
+}
+
+<> 2021-05-23T155126.500.json
+
+###
+
+GET http://localhost:80/api/restaurateur
+Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxNSJ9.41E5Vlxr5L0gxtOdkS8OiRLDCbM42ZIw3SVgUBd5CXg
+
+<> 2021-05-23T155118.200.json
+
+###
+
+POST http://localhost:80/api/restaurateur
+Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxNSJ9.41E5Vlxr5L0gxtOdkS8OiRLDCbM42ZIw3SVgUBd5CXg
+Content-Type: application/json
+
+{
+  "id": "ff1a2f4d-c386-482f-9f34-a8b35ff1bc16",
+  "firstName": "Marsel",
+  "lastName": "Akhmetov",
+  "fatherName": "Rustemovich",
+  "phoneNumber": "89600860684"
+}
+
+###
+
+GET http://localhost:80/api/restaurateur
+Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxNSJ9.41E5Vlxr5L0gxtOdkS8OiRLDCbM42ZIw3SVgUBd5CXg
+
+<> 2021-05-23T155053.200.json
+
+###
+
+POST http://localhost:80/api/restaurateur
+Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxNSJ9.41E5Vlxr5L0gxtOdkS8OiRLDCbM42ZIw3SVgUBd5CXg
+Content-Type: application/json
+
+{
+  "id": "a12b49c5-6720-41e3-a7de-3a5738a2cad9",
+  "firstName": "Marsel",
+  "lastName": "Akhmetov",
+  "fatherName": "Rustemovich",
+  "phoneNumber": "89600860684"
+}
+
+<> 2021-05-23T155036.500.json
+
+###
+
+POST http://localhost:80/api/signIn
+Content-Type: application/json
+
+{
+  "email": "Restaurateur",
+  "password": "123"
+}
+
+<> 2021-05-23T155025.200.json
+
+###
+
+POST http://localhost:80/api/signup
+Content-Type: application/json
+
+{
+  "email": "Restaurateur",
+  "password": "123",
+  "role": "RESTAURATEUR"
+}
+
+###
+
+POST http://localhost:80/api/signIn
+Content-Type: application/json
+
+{
+  "email": "Restaurateur14",
+  "password": "admin"
+}
+
+<> 2021-05-23T154725.200.json
+
+###
+
+POST http://localhost:80/api/signup
+Content-Type: application/json
+
+{
+  "email": "Restaurateur14",
+  "password": "admin",
+  "role": "RESTAURATEUR"
+}
+
+###
+
+POST http://localhost:80/api/signIn
+Content-Type: application/json
+
+{
+  "email": "Restaurateur12",
+  "password": "admin"
+}
+
+<> 2021-05-23T154553.200.json
+
+###
+
+POST http://localhost:80/api/signIn
+Content-Type: application/json
+
+{
+  "email": "Restaurateur12",
+  "password": "admin"
+}
+
+<> 2021-05-23T154518.200.json
+
+###
+
+POST http://localhost:80/api/signup
+Content-Type: application/json
+
+{
+  "email": "Restaurateur12",
+  "password": "admin",
+  "role": "RESTAURATEUR"
+}
+
+###
+
 GET http://localhost:80/api/tables?restaurantId=5abcd4e0-1373-46ac-96b5-b0f6ae8fb740
 Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1In0.PFqgdSmJZun7jHR3vHdK2coIpqmb4L0CKg5Bmby6peQ
 
@@ -50,525 +577,6 @@ Content-Type: application/json
 }
 
 <> 2021-05-23T141539.500.json
-
-###
-
-POST http://localhost:80/api/signIn
-Content-Type: application/json
-
-{
-  "email": "VOBuzanov23@gmail.com",
-  "password": "123"
-}
-
-<> 2021-05-23T141444.200.json
-
-###
-
-POST http://localhost:80/api/signIn
-Content-Type: application/json
-
-{
-  "email": "VOBuzanov23@gmail.com",
-  "password": "123"
-}
-
-<> 2021-05-23T141337.500.json
-
-###
-
-POST http://localhost:80/api/signIn
-Content-Type: application/json
-
-{
-  "email": "Restaurateur",
-  "password": "admin"
-}
-
-<> 2021-05-23T141053.500.json
-
-###
-
-POST http://localhost:80/api/signIn
-Content-Type: application/json
-
-{
-  "email": "VOBuzanov23@gmail.com",
-  "password": "123"
-}
-
-<> 2021-05-23T140923.500.json
-
-###
-
-POST http://localhost:80/api/signIn
-Content-Type: application/json
-
-{
-  "email": "Restaurateur",
-  "password": "admin"
-}
-
-<> 2021-05-23T140805.403.json
-
-###
-
-POST http://localhost:80/signIn
-Content-Type: application/json
-
-{
-  "email": "Restaurateur",
-  "password": "admin"
-}
-
-<> 2021-05-23T140756.404.json
-
-###
-
-POST http://localhost:80/api/signIn
-Content-Type: application/json
-
-{
-  "email": "VOBuzanov23@gmail.com",
-  "password": "123"
-}
-
-<> 2021-05-23T140648.403.json
-
-###
-
-POST http://localhost:80/api/signIn
-Content-Type: application/json
-
-{
-  "email": "VOBuzanov23@gmail.com",
-  "password": "123"
-}
-
-<> 2021-05-23T140639.403.json
-
-###
-
-GET http://localhost:80/api/tables?restaurantId=5abcd4e0-1373-46ac-96b5-b0f6ae8fb740
-Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1In0.PFqgdSmJZun7jHR3vHdK2coIpqmb4L0CKg5Bmby6peQ
-
-<> 2021-05-23T135545.200.json
-
-###
-
-POST http://localhost:80/api/table/reserve
-Content-Type: application/json
-
-{
-  "id": "db93649f-a3da-4eaf-9484-8c8c47191337"
-}
-
-###
-
-POST http://localhost:80/api/table/reserve
-Content-Type: application/json
-
-{
-  "tableId": "db93649f-a3da-4eaf-9484-8c8c47191337"
-}
-
-<> 2021-05-23T135239.400.json
-
-###
-
-POST http://localhost:80/api/table/reserve
-Content-Type: application/json
-
-{
-  "tableId": "db93649f-a3da-4eaf-9484-8c8c47191337"
-}
-
-<> 2021-05-23T135235.400.json
-
-###
-
-POST http://localhost:80/api/table/reserve
-Content-Type: application/json
-
-{
-  "tableId": "db93649f-a3da-4eaf-9484-8c8c47191337"
-}
-
-<> 2021-05-23T135104.400.json
-
-###
-
-POST http://localhost:80/api/table/reserve
-Content-Type: application/json
-
-{
-  "tableId": "db93649f-a3da-4eaf-9484-8c8c47191337"
-}
-
-<> 2021-05-23T135051.400.json
-
-###
-
-POST http://localhost:80/api/table/reserve
-Content-Type: application/json
-
-{
-  "tableId": "db93649f-a3da-4eaf-9484-8c8c47191337"
-}
-
-<> 2021-05-23T134914.400.json
-
-###
-
-GET http://localhost:80/api/tables?restaurantId=5abcd4e0-1373-46ac-96b5-b0f6ae8fb740
-Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1In0.PFqgdSmJZun7jHR3vHdK2coIpqmb4L0CKg5Bmby6peQ
-
-<> 2021-05-23T134832.200.json
-
-###
-
-GET http://localhost:80/api/tables?restaurantId=5abcd4e0-1373-46ac-96b5-b0f6ae8fb740
-Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1In0.PFqgdSmJZun7jHR3vHdK2coIpqmb4L0CKg5Bmby6peQ
-
-<> 2021-05-23T134742.200.json
-
-###
-
-GET http://localhost:80/api/table/qr?tableId=db93649f-a3da-4eaf-9484-8c8c47191337
-Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1In0.PFqgdSmJZun7jHR3vHdK2coIpqmb4L0CKg5Bmby6peQ
-
-<> 2021-05-23T134220.200.txt
-
-###
-
-GET http://localhost:80/api/table/qr?tableId=qr_db93649f-a3da-4eaf-9484-8c8c47191337.png
-Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1In0.PFqgdSmJZun7jHR3vHdK2coIpqmb4L0CKg5Bmby6peQ
-
-<> 2021-05-23T134203.500.json
-
-###
-
-GET http://localhost:80/api/table/qr?fileName=qr_db93649f-a3da-4eaf-9484-8c8c47191337.png
-Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1In0.PFqgdSmJZun7jHR3vHdK2coIpqmb4L0CKg5Bmby6peQ
-
-<> 2021-05-23T134147.400.json
-
-###
-
-GET http://localhost:80/api/tables?restaurantId=5abcd4e0-1373-46ac-96b5-b0f6ae8fb740
-Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1In0.PFqgdSmJZun7jHR3vHdK2coIpqmb4L0CKg5Bmby6peQ
-
-<> 2021-05-23T134113.200.json
-
-###
-
-POST http://localhost:80/api/table
-Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1In0.PFqgdSmJZun7jHR3vHdK2coIpqmb4L0CKg5Bmby6peQ
-Content-Type: application/json
-
-{
-  "seatCount": "2",
-  "restaurant": {
-    "id": "5abcd4e0-1373-46ac-96b5-b0f6ae8fb740"
-  }
-}
-
-###
-
-GET http://localhost:80/api/tables?restaurantId=5abcd4e0-1373-46ac-96b5-b0f6ae8fb740
-Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1In0.PFqgdSmJZun7jHR3vHdK2coIpqmb4L0CKg5Bmby6peQ
-
-<> 2021-05-23T134055.200.json
-
-###
-
-GET http://localhost:80/api/tables?restaurantId=5abcd4e0-1373-46ac-96b5-b0f6ae8fb740
-Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1In0.PFqgdSmJZun7jHR3vHdK2coIpqmb4L0CKg5Bmby6peQ
-
-###
-
-GET http://localhost:80/api/tables?restaurantId=5abcd4e0-1373-46ac-96b5-b0f6ae8fb740
-Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1In0.PFqgdSmJZun7jHR3vHdK2coIpqmb4L0CKg5Bmby6peQ
-
-###
-
-GET http://localhost:80/api/tables?restaurantId=5abcd4e0-1373-46ac-96b5-b0f6ae8fb740
-Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1In0.PFqgdSmJZun7jHR3vHdK2coIpqmb4L0CKg5Bmby6peQ
-
-###
-
-GET http://localhost:80/api/employee/restaurateur?restaurantId=5abcd4e0-1373-46ac-96b5-b0f6ae8fb740
-Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1In0.PFqgdSmJZun7jHR3vHdK2coIpqmb4L0CKg5Bmby6peQ
-
-<> 2021-05-23T133611.200.json
-
-###
-
-POST http://localhost:80/api/restaurateur/employee
-Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1In0.PFqgdSmJZun7jHR3vHdK2coIpqmb4L0CKg5Bmby6peQ
-Content-Type: application/json
-
-{
-  "firstName": "Влад",
-  "lastName": "Бузанов",
-  "fatherName": "Олегович",
-  "phoneNumber": "88005553535",
-  "role": "COOK",
-  "password": "123",
-  "restaurant": {
-    "id": "5abcd4e0-1373-46ac-96b5-b0f6ae8fb740"
-  },
-  "account": {
-    "email": "VOBuzanov234@gmail.com"
-  }
-}
-
-###
-
-GET http://localhost:80/api/employee/restaurateur?restaurantId=5abcd4e0-1373-46ac-96b5-b0f6ae8fb740
-Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1In0.PFqgdSmJZun7jHR3vHdK2coIpqmb4L0CKg5Bmby6peQ
-
-<> 2021-05-23T133555.200.json
-
-###
-
-GET http://localhost:80/api/employee/account/e0fadc38-1d65-4258-bd1c-ab4cdd267741
-Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1In0.PFqgdSmJZun7jHR3vHdK2coIpqmb4L0CKg5Bmby6peQ
-
-<> 2021-05-23T133456.200.json
-
-###
-
-POST http://localhost:80/api/restaurateur/employee
-Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1In0.PFqgdSmJZun7jHR3vHdK2coIpqmb4L0CKg5Bmby6peQ
-Content-Type: application/json
-
-{
-  "firstName": "Влад",
-  "lastName": "Бузанов",
-  "fatherName": "Олегович",
-  "phoneNumber": "88005553535",
-  "role": "WAITER",
-  "password": "123",
-  "restaurant": {
-    "id": "5abcd4e0-1373-46ac-96b5-b0f6ae8fb740"
-  },
-  "account": {
-    "email": "VOBuzanov23@gmail.com"
-  }
-}
-
-###
-
-POST http://localhost:80/api/restaurateur/employee
-Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1In0.PFqgdSmJZun7jHR3vHdK2coIpqmb4L0CKg5Bmby6peQ
-Content-Type: application/json
-
-{
-  "firstName": "Влад",
-  "lastName": "Бузанов",
-  "fatherName": "Олегович",
-  "phoneNumber": "88005553535",
-  "role": "WAITER",
-  "password": "123",
-  "restaurant": {
-    "id": "5abcd4e0-1373-46ac-96b5-b0f6ae8fb740"
-  },
-  "account": {
-    "email": "VOBuzanov23@gmail.com"
-  }
-}
-
-<> 2021-05-23T133334.500.json
-
-###
-
-POST http://localhost:80/api/restaurateur/employee
-Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1In0.PFqgdSmJZun7jHR3vHdK2coIpqmb4L0CKg5Bmby6peQ
-Content-Type: application/json
-
-{
-  "firstName": "Влад",
-  "lastName": "Бузанов",
-  "fatherName": "Олегович",
-  "phoneNumber": "88005553535",
-  "role": "WAITER",
-  "password": "123",
-  "restaurant": {
-    "id": "5abcd4e0-1373-46ac-96b5-b0f6ae8fb740"
-  },
-  "account": {
-    "email": "VOBuzanov23@gmail.com",
-    "role": "EMPLOYEE"
-  }
-}
-
-###
-
-POST http://localhost:80/api/restaurateur/employee
-Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1In0.PFqgdSmJZun7jHR3vHdK2coIpqmb4L0CKg5Bmby6peQ
-Content-Type: application/json
-
-{
-  "firstName": "Влад",
-  "lastName": "Бузанов",
-  "fatherName": "Олегович",
-  "phoneNumber": "88005553535",
-  "role": "WAITER",
-  "password": "123",
-  "account": {
-    "email": "VOBuzanov23@gmail.com",
-    "role": "EMPLOYEE"
-  }
-}
-
-###
-
-POST http://localhost:80/api/restaurateur/employee
-Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1In0.PFqgdSmJZun7jHR3vHdK2coIpqmb4L0CKg5Bmby6peQ
-Content-Type: application/json
-
-{
-  "firstName": "Влад",
-  "lastName": "Бузанов",
-  "fatherName": "Олегович",
-  "phoneNumber": "88005553535",
-  "role": "WAITER",
-  "password": "123",
-  "account": {
-    "email": "VOBuzanov2@gmail.com",
-    "role": "EMPLOYEE"
-  }
-}
-
-<> 2021-05-23T132502.500.json
-
-###
-
-POST http://localhost:80/api/restaurateur/employee
-Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1In0.PFqgdSmJZun7jHR3vHdK2coIpqmb4L0CKg5Bmby6peQ
-Content-Type: application/json
-
-{
-  "firstName": "Влад",
-  "lastName": "Бузанов",
-  "fatherName": "Олегович",
-  "phoneNumber": "88005553535",
-  "role": "WAITER",
-  "accountDto": {
-    "email": "VOBuzanov2@gmail.com",
-    "role": "EMPLOYEE",
-    "password": "123"
-  }
-}
-
-###
-
-POST http://localhost:80/api/restaurateur/employee
-Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1In0.PFqgdSmJZun7jHR3vHdK2coIpqmb4L0CKg5Bmby6peQ
-Content-Type: application/json
-
-{
-  "firstName": "Влад",
-  "lastName": "Бузанов",
-  "fatherName": "Олегович",
-  "phoneNumber": "88005553535",
-  "accountDto": {
-    "email": "VOBuzanov@gmail.com",
-    "role": "EMPLOYEE",
-    "password": "123"
-  }
-}
-
-###
-
-POST http://localhost:80/api/restaurateur/employee
-Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1In0.PFqgdSmJZun7jHR3vHdK2coIpqmb4L0CKg5Bmby6peQ
-Content-Type: application/json
-
-{
-  "firstName": "Влад",
-  "lastName": "Бузанов",
-  "fatherName": "Олегович",
-  "phoneNumber": "88005553535",
-  "accountDto": {
-    "email": "VOBuzanov@gmail.com",
-    "role": "EMPLOYEE",
-    "password": "123"
-  }
-}
-
-###
-
-GET http://localhost:80/api/table/qr?fileName=qrd7a286d5-05b2-434e-84c4-fc6f8bff02a3.png
-Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1In0.PFqgdSmJZun7jHR3vHdK2coIpqmb4L0CKg5Bmby6peQ
-
-<> 2021-05-20T193601.200.txt
-
-###
-
-POST http://localhost:80/api/table
-Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1In0.PFqgdSmJZun7jHR3vHdK2coIpqmb4L0CKg5Bmby6peQ
-Content-Type: application/json
-
-{
-  "seatCount": "2",
-  "restaurant": {
-    "id": "5abcd4e0-1373-46ac-96b5-b0f6ae8fb740"
-  }
-}
-
-###
-
-POST http://localhost:80/api/table
-Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1In0.PFqgdSmJZun7jHR3vHdK2coIpqmb4L0CKg5Bmby6peQ
-Content-Type: application/json
-
-{
-  "seatCount": "2",
-  "restaurant": {
-    "id": "5abcd4e0-1373-46ac-96b5-b0f6ae8fb740"
-  }
-}
-
-###
-
-POST http://localhost:80/api/table
-Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1In0.PFqgdSmJZun7jHR3vHdK2coIpqmb4L0CKg5Bmby6peQ
-Content-Type: application/json
-
-{
-  "seatCount": "2",
-  "restaurant": {
-    "id": "5abcd4e0-1373-46ac-96b5-b0f6ae8fb740"
-  }
-}
-
-###
-
-POST http://localhost:80/api/table
-Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1In0.PFqgdSmJZun7jHR3vHdK2coIpqmb4L0CKg5Bmby6peQ
-Content-Type: application/json
-
-{
-  "seatCount": "4",
-  "restaurant": {
-    "id": "5abcd4e0-1373-46ac-96b5-b0f6ae8fb740"
-  }
-}
-
-###
-
-POST http://localhost:80/api/table
-Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1In0.PFqgdSmJZun7jHR3vHdK2coIpqmb4L0CKg5Bmby6peQ
-Content-Type: application/json
-
-{
-  "seatCount": "4",
-  "restaurant": {
-    "id": "5abcd4e0-1373-46ac-96b5-b0f6ae8fb740"
-  }
-}
 
 ###
 

@@ -18,7 +18,6 @@ import java.util.UUID;
 @Tag(name = "Menu")
 @RestController
 @RequiredArgsConstructor
-@PreAuthorize("isAuthenticated()")
 public class MenuController {
 
     private final MenuService menuService;
