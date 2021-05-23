@@ -1,8 +1,7 @@
 package team404.restaurant.dish.controller;
 
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiParam;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,25 +14,23 @@ import team404.restaurant.dish.service.DishService;
 
 import java.util.List;
 
-@Api(value = "Dish controller")
+@Tag(name = "Dish")
 @RestController
 @RequiredArgsConstructor
-@PreAuthorize("isAuthenticated()")
 public class DishController {
 
     private final DishService dishService;
 
-    @ApiOperation(value = "Add dish")
+    @Operation(summary = "Add dish")
     @PreAuthorize("hasAuthority('RESTAURATEUR')")
     @PostMapping("/api/dish")
-    public void addDish(@ApiParam(name = "Dish information") @RequestBody DishDto dishDto) {
+    public void addDish(@RequestBody DishDto dishDto) {
         dishService.submit(dishDto);
     }
 
-    @ApiOperation(value = "Get dishes in menu")
-    @PreAuthorize("hasAuthority('RESTAURATEUR')")
+    @Operation(summary = "Get dishes in menu")
     @GetMapping("/api/dish")
-    public List<DishDto> getAllByMenuId(@ApiParam(name = "Menu id") @RequestParam Long menuId) {
+    public List<DishDto> getAllByMenuId(@RequestParam Long menuId) {
         return dishService.getAllByMenuId(menuId);
     }
 }

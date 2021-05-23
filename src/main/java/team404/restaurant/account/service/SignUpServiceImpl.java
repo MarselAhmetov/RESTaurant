@@ -10,13 +10,14 @@ import team404.restaurant.account.model.Role;
 import team404.restaurant.client.model.Client;
 import team404.restaurant.account.dto.AccountDto;
 import team404.restaurant.employee.model.Employee;
+import team404.restaurant.employee.model.EmployeeRole;
 import team404.restaurant.general.repository.AccountRepository;
 import team404.restaurant.general.repository.SimpleDao;
 import team404.restaurant.restaurateur.model.Restaurateur;
 
 @Service
 @RequiredArgsConstructor
-public class SignUpServiceImpl implements SignUpService{
+public class SignUpServiceImpl implements SignUpService {
 
     private final PasswordEncoder passwordEncoder;
     private final AccountRepository accountRepository;
@@ -37,11 +38,6 @@ public class SignUpServiceImpl implements SignUpService{
                 Client client = new Client();
                 client.setAccount(account);
                 simpleDao.save(client);
-            break;
-            case EMPLOYEE:
-                Employee employee = new Employee();
-                employee.setAccount(account);
-                simpleDao.save(employee);
                 break;
             case RESTAURATEUR:
                 Restaurateur restaurateur = new Restaurateur();

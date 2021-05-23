@@ -13,6 +13,7 @@ import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -24,7 +25,7 @@ import javax.persistence.Table;
 @Table(name = "DISH")
 @AttributeOverride(name = "id", column = @Column(name = "DISH_ID"))
 public class Dish extends LongIdEntity {
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "MENU_ID")
     private Menu menu;
 

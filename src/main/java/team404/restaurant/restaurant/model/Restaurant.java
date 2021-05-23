@@ -20,7 +20,7 @@ public class Restaurant extends UuidIdEntity {
     @Column(name = "NAME", nullable = false)
     private String name;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "OWNER")
     private Restaurateur owner;
 

@@ -9,5 +9,5 @@ import team404.restaurant.restaurant.dto.RestaurantDto;
 @Setter
 public class MenuDto extends LongIdDto {
     private String name;
-    private RestaurantDto restaurantDto;
+    private RestaurantDto restaurant;
 }

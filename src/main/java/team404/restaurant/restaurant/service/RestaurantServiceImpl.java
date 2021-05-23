@@ -9,10 +9,11 @@ import team404.restaurant.restaurant.dto.RestaurantFilter;
 import team404.restaurant.restaurant.model.Restaurant;
 import team404.restaurant.restaurateur.model.Restaurateur;
 import team404.restaurant.restaurant.dto.RestaurantDto;
-import team404.restaurant.general.repository.RestaurantRepository;
+import team404.restaurant.restaurant.repository.RestaurantRepository;
 import team404.restaurant.general.repository.RestaurateurRepository;
 import team404.restaurant.general.security.jwt.details.UserDetailsImpl;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -49,9 +50,29 @@ public class RestaurantServiceImpl implements RestaurantService {
         return restaurantDto;
     }
 
+    @Deprecated
     @Override
     public List<RestaurantDto> getRestaurants(RestaurantFilter filter) {
-        // TODO: 19.03.2021 Закончить
-        return null;
+        // TODO: 28.04.2021 Переписать на критерии (не срочно)
+        List<Restaurant> restaurants = new ArrayList<>();
+        System.out.println(filter.getRestaurateurId());
+        if (filter.getRestaurateurId() != null) {
+            restaurants = restaurantRepository.getAllByOwner_Id(filter.getRestaurateurId());
+        } else {
+            restaurants = restaurantRepository.findAll();
+        }
+        return mapper.mapAsList(restaurants, RestaurantDto.class);
+    }
+
+    @Override
+    public List<RestaurantDto> getRestaurants() {
+        List<Restaurant> restaurants = restaurantRepository.findAll();
+        return mapper.mapAsList(restaurants, RestaurantDto.class);
+    }
+
+    @Override
+    public List<RestaurantDto> getRestaurantsByRestaurateur(UUID restaurateurId) {
+        List<Restaurant> restaurants = restaurantRepository.getAllByOwner_Id(restaurateurId);
+        return mapper.mapAsList(restaurants, RestaurantDto.class);
     }
 }

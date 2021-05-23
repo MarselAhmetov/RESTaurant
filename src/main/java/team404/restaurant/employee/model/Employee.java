@@ -7,6 +7,7 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import team404.restaurant.account.model.Account;
 import team404.restaurant.general.model.UuidIdEntity;
+import team404.restaurant.restaurant.model.Restaurant;
 
 import javax.persistence.AttributeOverride;
 import javax.persistence.Column;
@@ -14,6 +15,7 @@ import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -45,4 +47,11 @@ public class Employee extends UuidIdEntity {
     @Column(name = "ROLE")
     @Enumerated(EnumType.STRING)
     private EmployeeRole role;
+
+    @ManyToOne
+    @JoinColumn(name = "RESTAURANT_ID")
+    private Restaurant restaurant;
+
+    @Column(name = "PASSWORD")
+    private String password;
 }
