@@ -20,7 +20,6 @@ import java.util.UUID;
 @Tag(name = "Order")
 @RestController
 @RequiredArgsConstructor
-@PreAuthorize("isAuthenticated()")
 public class OrderController {
 
     private final OrderService orderService;
@@ -41,14 +40,12 @@ public class OrderController {
 
     @Operation(summary = "Get order by table")
     @GetMapping("/api/order/table")
-    @PreAuthorize("hasAuthority('WAITER')")
     public OrderDto getOrderByTable(@RequestParam UUID tableId) {
         return orderService.getOrderByTable(tableId);
     }
 
     @Operation(summary = "Get order by id")
     @GetMapping("/api/order/{orderId}")
-    @PreAuthorize("hasAuthority('WAITER')")
     public OrderDto getOrderById(@PathVariable UUID orderId) {
         return orderService.getById(orderId);
     }
