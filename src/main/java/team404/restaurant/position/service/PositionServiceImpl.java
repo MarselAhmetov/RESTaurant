@@ -13,6 +13,7 @@ import team404.restaurant.general.config.mapping.GlobalMapper;
 import team404.restaurant.general.repository.SimpleDao;
 import team404.restaurant.general.security.jwt.details.UserDetailsImpl;
 import team404.restaurant.order.model.Order;
+import team404.restaurant.order.model.OrderStatus;
 import team404.restaurant.order.repository.OrderRepository;
 import team404.restaurant.position.dto.PositionDto;
 import team404.restaurant.position.dto.PositionMinDto;
@@ -41,7 +42,7 @@ public class PositionServiceImpl implements PositionService {
         if (positionDto.getOrderId() != null) {
             order = orderRepository.findById(positionDto.getOrderId()).orElseThrow();
         } else if (positionDto.getTableId() != null) {
-            order = orderRepository.getByTable_Id(positionDto.getTableId());
+            order = orderRepository.getByTable_IdAndStatus(positionDto.getTableId(), OrderStatus.ACTIVE);
         } else {
             throw new IllegalArgumentException();
         }
