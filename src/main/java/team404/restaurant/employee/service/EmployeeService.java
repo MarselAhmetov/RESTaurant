@@ -13,4 +13,5 @@ public interface EmployeeService {
     EmployeeWithPasswordDto getEmployeeWithAccount(UUID employeeId);
     EmployeeDto getEmployee(UUID employeeId);
     Employee getEmployeeByAccount(Account account);
+    EmployeeDto getCurrentEmployee();
 }

@@ -1,14 +1,18 @@
 package team404.restaurant.employee.service;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import team404.restaurant.account.model.Account;
 import team404.restaurant.employee.dto.EmployeeDto;
 import team404.restaurant.employee.dto.EmployeeWithPasswordDto;
 import team404.restaurant.employee.model.Employee;
 import team404.restaurant.employee.repository.EmployeeRepository;
 import team404.restaurant.general.config.mapping.GlobalMapper;
+import team404.restaurant.general.security.jwt.details.UserDetailsImpl;
 
 import java.util.List;
 import java.util.UUID;
@@ -41,5 +45,14 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public Employee getEmployeeByAccount(Account account) {
         return employeeRepository.getEmployeeByAccount_Id(account.getId());
+    }
+
+    @Override
+    @Transactional
+    public EmployeeDto getCurrentEmployee() {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        UserDetailsImpl userDetails = (UserDetailsImpl) auth.getDetails();
+        Employee employee = employeeRepository.getEmployeeByAccount_Id(userDetails.getAccount().getId());
+        return mapper.map(employee, EmployeeDto.class);
     }
 }

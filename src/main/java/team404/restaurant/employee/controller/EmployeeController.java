@@ -39,4 +39,11 @@ public class EmployeeController {
     public EmployeeWithPasswordDto getEmployeeWithPassword(@PathVariable UUID employeeId) {
         return employeeService.getEmployeeWithAccount(employeeId);
     }
+
+    @Operation(summary = "Get current employee")
+    @GetMapping("/api/employee/current")
+    @PreAuthorize("hasAnyAuthority('WAITER', 'COOK')")
+    public EmployeeDto getCurrentEmployee() {
+        return employeeService.getCurrentEmployee();
+    }
 }
