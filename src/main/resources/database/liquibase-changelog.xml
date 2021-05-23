@@ -193,4 +193,7 @@
     <changeSet id="23.05.1418" author="marsel">
         <renameColumn tableName="POSITION" oldColumnName="EMPLOYEE_ID" newColumnName="COOK_ID"/>
     </changeSet>
+    <changeSet id="24.05.014" author="marsel">
+        <addAutoIncrement tableName="POSITION" columnName="POSITION_ID"/>
+    </changeSet>
 </databaseChangeLog>
