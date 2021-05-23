@@ -7,8 +7,10 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import team404.restaurant.account.dto.AccountSafeDto;
 import team404.restaurant.account.model.Account;
 import team404.restaurant.account.dto.SignInDto;
+import team404.restaurant.general.config.mapping.GlobalMapper;
 import team404.restaurant.general.dto.TokenDto;
 import team404.restaurant.general.repository.AccountRepository;
 
@@ -20,6 +22,7 @@ public class SignInServiceImpl implements SignInService {
 
     private final AccountRepository accountRepository;
     private final PasswordEncoder passwordEncoder;
+    private final GlobalMapper mapper;
 
     @Value("${jwt.secret}")
     private String secret;
@@ -35,7 +38,7 @@ public class SignInServiceImpl implements SignInService {
                         .setSubject(account.getId().toString())
                         .signWith(SignatureAlgorithm.HS256, secret)
                         .compact();
-                return new TokenDto(token);
+                return new TokenDto(token, mapper.map(account, AccountSafeDto.class));
             } else throw new AccessDeniedException("Wrong login/password");
         } else throw new AccessDeniedException("User not found");
     }
