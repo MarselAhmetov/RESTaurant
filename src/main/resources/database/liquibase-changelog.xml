@@ -196,4 +196,12 @@
     <changeSet id="24.05.014" author="marsel">
         <addAutoIncrement tableName="POSITION" columnName="POSITION_ID"/>
     </changeSet>
+    <changeSet id="24.05.040" author="marsel">
+        <addColumn tableName="TABLE_">
+            <column name="TABLE_NUMBER" type="bigint"/>
+        </addColumn>
+        <addColumn tableName="ORDER_">
+            <column name="CREATE_TIME" type="timestamp"/>
+        </addColumn>
+    </changeSet>
 </databaseChangeLog>

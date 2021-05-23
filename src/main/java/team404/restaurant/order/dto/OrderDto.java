@@ -11,6 +11,7 @@ import team404.restaurant.position.dto.PositionDto;
 import team404.restaurant.restaurant.dto.RestaurantDto;
 import team404.restaurant.table.dto.TableDto;
 
+import java.util.Date;
 import java.util.List;
 
 @Data
@@ -23,4 +24,5 @@ public class OrderDto extends UuidIdDto {
     private List<PositionDto> positions;
     private EmployeeDto employee;
     private String status;
+    private Date createTime;
 }

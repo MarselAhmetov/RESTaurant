@@ -15,6 +15,7 @@ import team404.restaurant.table.model.Table;
 import team404.restaurant.table.model.TableStatus;
 import team404.restaurant.table.repository.TableRepository;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -40,7 +41,7 @@ public class TableServiceImpl implements TableService {
         }
         table.setSeatCount(tableDto.getSeatCount());
         table.setStatus(TableStatus.FREE);
-
+        table.setNumber(tableDto.getNumber());
         String barcodeText = "http://restaurant404.tilda.ws?tableId=" + table.getId();
         qrService.generateQRCode(barcodeText, table.getId().toString());
         tableRepository.save(table);
@@ -77,6 +78,7 @@ public class TableServiceImpl implements TableService {
             order.setTable(table);
             order.setRestaurant(table.getRestaurant());
             order.setStatus(OrderStatus.CREATED);
+            order.setCreateTime(new Date());
             orderRepository.save(order);
         } else {
             throw new IllegalArgumentException();

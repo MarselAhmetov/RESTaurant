@@ -11,4 +11,5 @@ public class TableDto extends UuidIdDto {
     private Integer seatCount;
     private RestaurantDto restaurant;
     private String status;
+    private Long number;
 }

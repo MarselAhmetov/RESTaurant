@@ -23,6 +23,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import java.util.Date;
 import java.util.List;
 
 @Data
@@ -56,5 +57,8 @@ public class Order extends UuidIdEntity {
     @Enumerated(EnumType.STRING)
     @Column(name = "STATUS")
     private OrderStatus status;
+
+    @Column(name = "CREATE_TIME")
+    private Date createTime;
 
 }

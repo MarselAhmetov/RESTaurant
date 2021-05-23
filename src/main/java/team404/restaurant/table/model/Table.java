@@ -31,6 +31,9 @@ public class Table extends UuidIdEntity {
     @Column(name = "SEAT_COUNT")
     private Integer seatCount;
 
+    @Column(name = "TABLE_NUMBER")
+    private Long number;
+
     @ManyToOne
     @JoinColumn(name = "RESTAURANT_ID")
     private Restaurant restaurant;
