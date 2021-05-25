@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 import team404.restaurant.dish.model.Dish;
 import team404.restaurant.dish.repository.DishRepository;
 import team404.restaurant.employee.model.Employee;
+import team404.restaurant.employee.model.EmployeeRole;
 import team404.restaurant.employee.service.EmployeeService;
 import team404.restaurant.general.config.mapping.GlobalMapper;
 import team404.restaurant.general.repository.SimpleDao;
@@ -77,6 +78,12 @@ public class PositionServiceImpl implements PositionService {
             case "COOKING":
                 if (position.getStatus().equals(PositionStatus.CREATED) || position.getStatus().equals(PositionStatus.COOKED)) {
                     position.setStatus(PositionStatus.COOKING);
+                    Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+                    UserDetailsImpl userDetails = (UserDetailsImpl) auth.getDetails();
+                    Employee employee = employeeService.getEmployeeByAccount(userDetails.getAccount());
+                    if (employee.getRole().equals(EmployeeRole.COOK)) {
+                        position.setCook(employee);
+                    }
                 } else {
                     throw new IllegalArgumentException();
                 }
