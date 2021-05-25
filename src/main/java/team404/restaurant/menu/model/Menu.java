@@ -1,13 +1,15 @@
-package team404.restaurant.general.model;
+package team404.restaurant.menu.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import team404.restaurant.general.model.LongIdEntity;
 import team404.restaurant.restaurant.model.Restaurant;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.Date;
 
 @Data
 @Builder
@@ -25,5 +27,5 @@ public class Menu extends LongIdEntity {
     private String name;
 
     @Column(name = "LAST_UPDATE_TIME", nullable = false)
-    private Timestamp lastUpdateTime;
+    private Date lastUpdateTime;
 }
