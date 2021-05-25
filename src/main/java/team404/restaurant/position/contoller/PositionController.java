@@ -36,7 +36,7 @@ public class PositionController {
 
     @Operation(summary = "Change position status")
     @PostMapping("/api/position/status")
-    @PreAuthorize("hasAuthority('WAITER')")
+    @PreAuthorize("hasAnyAuthority('WAITER', 'COOK')")
     public void changePositionStatus(@RequestBody PositionDto positionDto) {
         positionService.changePositionStatus(positionDto);
     }
