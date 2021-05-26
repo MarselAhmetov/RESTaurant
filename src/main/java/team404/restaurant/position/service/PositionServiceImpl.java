@@ -43,7 +43,7 @@ public class PositionServiceImpl implements PositionService {
         if (positionDto.getOrderId() != null) {
             order = orderRepository.findById(positionDto.getOrderId()).orElseThrow();
         } else if (positionDto.getTableId() != null) {
-            order = orderRepository.getByTable_IdAndStatusNot(positionDto.getTableId(), OrderStatus.CLOSED);
+            order = orderRepository.findByTable_IdAndStatusNot(positionDto.getTableId(), OrderStatus.CLOSED).orElseThrow();
         } else {
             throw new IllegalArgumentException();
         }
