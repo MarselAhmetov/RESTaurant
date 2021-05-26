@@ -100,7 +100,7 @@ public class OrderServiceImpl implements OrderService {
     @Override
     @Transactional
     public OrderDto getOrderByTable(UUID tableId) {
-        Order order = orderRepository.getByTable_IdAndStatusNot(tableId, OrderStatus.CLOSED);
+        Order order = orderRepository.findByTable_IdAndStatusNot(tableId, OrderStatus.CLOSED).orElseThrow();
         return mapper.map(order, OrderDto.class);
     }
 }
